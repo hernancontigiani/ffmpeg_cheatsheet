@@ -51,7 +51,7 @@ ffmpeg -i in1.mp4 -i in2.mp4 -filter_complex \
 ffmpeg -i int.mp4 -c:v libx264 out.h264 -y
 ```
 
-## Get a image frame from a video
+## Create a image frame from a video
 Get a image from FRAME nº10:
 ```sh
 sudo ffmpeg -ss 10 -i in.mp4 -vframes 1 -f image2 out.jpg
@@ -62,3 +62,10 @@ Create a h264 video from input image, of 15 seconds duration:
 ```sh
 ffmpeg -loop 1 -i int.jpg -t 15 out.h264
 ```
+
+## Create a gif from video
+Create a gif from in.mp4 video from start stamp 3s of 7seconds duration
+```sh
+ffmpeg -ss 0:03 -t 0:07 -i in.mp4 -vf "fps=10,scale=720:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 out.gif
+```
+
