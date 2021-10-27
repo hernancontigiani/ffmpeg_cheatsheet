@@ -56,7 +56,11 @@ From MP4 to H265
 ```sh
 $ ffmpeg -i input.mp4 -c:v libx265 -vtag hvc1 out.mp4
 ```
-
+## Change video FPS without change speed
+Example of how to change FPS to 10
+```sh
+$ ffmpeg -i in.mp4 -filter:v fps=fps=10 out.mp4
+```
 
 ## Create a image frame from a video
 Get a image from FRAME nº10:
