@@ -80,3 +80,16 @@ Create a gif from in.mp4 video from start stamp 3s of 7seconds duration
 $ ffmpeg -ss 0:03 -t 0:07 -i in.mp4 -vf "fps=10,scale=720:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 out.gif
 ```
 
+# Play webcam video
+Use "video0" for notebook camera, use "video1" for USB webcam
+```
+$ ffplay /dev/video0
+```
+
+# Record webcam video
+Use "video0" for notebook camera, use "video1" for USB webcam
+```
+$ ffmpeg -f v4l2 -framerate 20 -video_size 1280x720 -input_format mjpeg -i /dev/video0 out.mp4 -y
+```
+
+
