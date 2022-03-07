@@ -51,6 +51,10 @@ From MP4 (mpeg) to H264:
 ```sh
 $ ffmpeg -i int.mp4 -c:v libx264 out.h264 -y
 ```
+From MP4/H264 to High profile (level 4):
+```sh
+$ ffmpeg -i in.mp4 -c:v libx264 -profile:v high -level:v 4.0 -pix_fmt yuv420p -c:a copy out.h264 -y
+```
 
 From MP4 to H265
 ```sh
