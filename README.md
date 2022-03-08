@@ -60,6 +60,16 @@ From MP4 to H265
 ```sh
 $ ffmpeg -i input.mp4 -c:v libx265 -vtag hvc1 out.mp4
 ```
+## Change video speed
+Duplicate speed (speed up):
+```
+$ ffmpeg -i in.mp4 -filter:v "setpts=0.5*PTS" out.mp4
+```
+Half speed (speed down):
+```
+$ ffmpeg -i in.mp4 -filter:v "setpts=2*PTS" out.mp4
+```
+
 ## Change video FPS without change speed
 Example of how to change FPS to 10
 ```sh
