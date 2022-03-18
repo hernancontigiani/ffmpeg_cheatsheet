@@ -1,5 +1,5 @@
 # FFmpeg cheatsheet
-FFmpeg cheatsheet for crop, contact videos, create gifs and video modification
+FFmpeg cheatsheet for crop, contact videos, create gifs and video modificatio
 
 ## Crop videos
 Crop a input video (in.mp4) from a specific start stamp (-ss MM:SS):
