@@ -1,0 +1,5 @@
+- Archivo de entrada renomrarlo a "input.mp4" (debe ser mp4)
+- En el archivo escenas.txt TXT se debe colocar todos los videos que se desean obtener del original y las partes que lo componen
+- En la primera columna va el nombre del o los videos de salida, si el sistema ve que el nombre de cada fila consecutiva es igual lo colocará en un mismo video (como es este caso con out)
+- En la segunda columna va el minuto y segundo del comienzo de esa sección en el video original
+- - En la segunda columna va el minuto y segundo del fin de esa sección en el video original
