@@ -106,4 +106,10 @@ Use "video0" for notebook camera, use "video1" for USB webcam
 $ ffmpeg -f v4l2 -framerate 20 -video_size 1280x720 -input_format mjpeg -i /dev/video0 out.mp4 -y
 ```
 
+# Add a overlay image
+In this example we are adding a overlay image in top-left corner (0,0) in the first 8 seconds (from 0 to 8). If the image is bigger than the video original resolution it will be cut.
+```
+ffmpeg -i in.mp4 -i image.jpg -filter_complex "[0:v][1:v] overlay=0:0:enable='between(t,0,8)'" -pix_fmt yuv420p -c:a copy out.mp4
+```
+
 
